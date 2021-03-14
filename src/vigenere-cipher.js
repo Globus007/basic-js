@@ -7,14 +7,14 @@ class VigenereCipheringMachine {
   }
 
   encrypt(message, key) {
-    return this.#process(message, key, "encrypt");
+    return this.process(message, key, "encrypt");
   }    
 
   decrypt(message, key) {
-    return this.#process(message, key, "decrypt");
+    return this.process(message, key, "decrypt");
   }
 
-  #process(message, key, process) {
+  process(message, key, process) {
     if (!message || !key) throw new Error("Wrong parameters");
     //increase key to message.length
     key = key.toUpperCase().repeat( Math.ceil(message.length / key.length) );
