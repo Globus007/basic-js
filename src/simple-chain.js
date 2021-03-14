@@ -27,7 +27,7 @@ const chainMaker = {
   removeLink(position) {
     if (!isFinite(position) || position%1 || position > this.length) {
       this.resetChainMaker();
-      throw new CustomError("wrong position");
+      throw new Error("wrong position");
     }
 
      //set current before deleting element
@@ -93,4 +93,3 @@ class Node {
 }
 
 module.exports = chainMaker;
-const CustomError = require("../extensions/custom-error");

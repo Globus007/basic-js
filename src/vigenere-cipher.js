@@ -1,5 +1,3 @@
-const CustomError = require("../extensions/custom-error");
-
 class VigenereCipheringMachine {
   direct;
   alfabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -17,7 +15,7 @@ class VigenereCipheringMachine {
   }
 
   #process(message, key, process) {
-    if (!message || !key) throw new CustomError("Wrong parameters");
+    if (!message || !key) throw new Error("Wrong parameters");
     //increase key to message.length
     key = key.toUpperCase().repeat( Math.ceil(message.length / key.length) );
 
@@ -36,7 +34,7 @@ class VigenereCipheringMachine {
         if (encryptedIndex < 0) encryptedIndex += this.alfabet.length;
 
       } else {
-        throw new CustomError("Something wrong");
+        throw new Error("Something wrong");
       }
 
       //increase index on key
