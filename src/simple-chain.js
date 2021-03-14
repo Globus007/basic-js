@@ -50,7 +50,7 @@ const chainMaker = {
 
   reverseChain() {
     // if 0 or 1 element
-    if (!this.head?.next) return this;
+    if (!this.head || !this.head.next) return this;
 
     let prev = this.head;
     let next = this.head.next;
