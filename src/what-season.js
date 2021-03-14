@@ -1,8 +1,6 @@
-const CustomError = require("../extensions/custom-error");
-
 module.exports = function getSeason(date) {
   if(!date) return "Unable to determine the time of year!";
-  if( Date.parse(date) !== date ) throw new CustomError("wrong data");
+  if ( Object.prototype.toString.call(date) !== '[object Date]' ) throw new Error("wrong tricky data");
   switch(date.getMonth()) {
     case 11:
     case 0:
