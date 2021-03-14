@@ -49,11 +49,3 @@ class VigenereCipheringMachine {
 }
 
 module.exports = VigenereCipheringMachine;
-
-let directMachine = new VigenereCipheringMachine();
-let test = directMachine.encrypt('Samelengthkey', 'Samelengthkey')
-let test2 = directMachine.decrypt('AEIHQX SX DLLU!', 'alphonse');
-
-
-console.log(test)
-console.log("KAYIWIAMMOUIW")
